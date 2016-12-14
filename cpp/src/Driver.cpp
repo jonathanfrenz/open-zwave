@@ -1574,7 +1574,8 @@ bool Driver::HandleErrorResponse
 	{
 		if( ++node->m_errors >= 3 )
 		{
-			node->SetNodeAlive( false );
+			Log::Write( LogLevel_Info, _nodeId, "ERROR: %s would have been dead. Going to keep trying.", _funcStr );
+			//node->SetNodeAlive( false );
 		}
 	}
 	return false;
